@@ -71,7 +71,7 @@ exports.testCmd =(rl,id) => {
 					biglog('CORRECTO','green');
 				}else{
 					biglog('INCORRECTO','red');
-					log(`Su respuesta es correcta.`);
+					log(`Su respuesta es incorrecta.`);
 				}
 				rl.prompt();
 			});
@@ -117,6 +117,7 @@ exports.playCmd = rl => {
 						playOne();
 					}else{
 						biglog('INCORRECTO','red');
+						log(`Su respuesta es incorrecta.`);
 						log(`Fin del juego. Aciertos; ${colorize(score,'green')} `);
 						rl.prompt();
 					}
