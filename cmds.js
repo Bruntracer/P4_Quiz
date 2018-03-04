@@ -66,12 +66,12 @@ exports.testCmd =(rl,id) => {
 			const quiz = model.getByIndex(id);
 			rl.question(colorize(`${quiz.question}? `,'red'), resp =>{
 
-
-
 				if (resp.toLowerCase().trim()===quiz.answer.toLowerCase().trim()) {
+					log(`Su respuesta es correcta.`);
 					biglog('CORRECTO','green');
 				}else{
 					biglog('INCORRECTO','red');
+					log(`Su respuesta es correcta.`);
 				}
 				rl.prompt();
 			});
@@ -96,7 +96,7 @@ exports.playCmd = rl => {
 		const playOne= () => {
 			if(toBeResolved.length === 0){
 				errorlog(`No hay nada mas que preguntar`);
-				log(`Completado!: ${colorize(score,'green')} aciertos.`);
+				log(`Fin del juego!: ${colorize(score,'green')} aciertos.`);
 				rl.prompt();
 
 			}else{
@@ -109,14 +109,15 @@ exports.playCmd = rl => {
 					if (resp.toLowerCase().trim()===quiz.answer.toLowerCase().trim()) {
 						biglog('CORRECTO','green');
 						score++;
-						log(`llevas: ${colorize(score,'green')} aciertos.`);
+						
+						log(`CORRECTO - Lleva  ${colorize(score,'green')} aciertos.`);
 						//toBeResolved.splice(rndId,1);
 						toBeResolved.splice(rnd,1);
 								
 						playOne();
 					}else{
 						biglog('INCORRECTO','red');
-						log(`llevas: ${colorize(score,'green')} aciertos.`);
+						log(`Fin del juego. Aciertos; ${colorize(score,'green')} `);
 						rl.prompt();
 					}
 
