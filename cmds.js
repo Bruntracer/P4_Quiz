@@ -133,6 +133,10 @@ exports.testCmd =(rl,id) => {
 	validateId(id)
 	.then(id => models.quiz.findById(id))
 	.then(quiz =>{
+		if (typeof id ==="undefined") {
+		errorlog(`Falta el parámetro id.`);
+		rl.prompt();
+		}	
 		if(!quiz){
 			throw new Error(`No existe un quiz asociado al id:${id}.`);
 		}
@@ -201,14 +205,14 @@ exports.playCmd = rl => {
 				return makeQuestion(rl, 'Introduzca la respuesta: ')
 				.then(q=>{
 					if (q.toLowerCase().trim()===quiz.answer.toLowerCase().trim()) {
-							log(`Su respuesta es correcta.`);
+							log(`Su respuesta es correcta. correct`);
 							biglog('CORRECTO','green');
 							score++;
 							toBeResolved.splice(rnd,1);
 							playOne();
 						}else{
 							biglog('INCORRECTO','red');
-							log(`Su respuesta es incorrecta.`);
+							log(`Su respuesta es incorrecta. incorrect`);
 							rl.prompt();
 						}
 				});
