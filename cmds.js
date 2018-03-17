@@ -146,9 +146,9 @@ exports.testCmd =(rl,id) => {
 		.then(q=>{
 			if (q.toLowerCase().trim()===quiz.answer.toLowerCase().trim()) {
 					log(`Su respuesta es correcta.`);
-					biglog('CORRECTO','green');
+					//biglog('CORRECTO','green');
 				}else{
-					biglog('INCORRECTO','red');
+					//biglog('INCORRECTO','red');
 					log(`Su respuesta es incorrecta.`);
 				}
 		});
