@@ -145,11 +145,11 @@ exports.testCmd =(rl,id) => {
 		return makeQuestion(rl, `${quiz.question}? `)
 		.then(q=>{
 			if (q.toLowerCase().trim()===quiz.answer.toLowerCase().trim()) {
-					log(`Su respuesta es correcta. correct`);
+					console.log(`Su respuesta es correcta. correct`);
 					//biglog('CORRECTO','green');
 				}else{
 					//biglog('INCORRECTO','red');
-					log(`Su respuesta es incorrecta. incorrect`);
+					console.log(`Su respuesta es incorrecta. incorrect`);
 				}
 		});
 	})
@@ -185,7 +185,7 @@ exports.playCmd = rl => {
 		const playOne= () => {
 			if(toBeResolved.length === 0){
 				errorlog(`No hay nada mas que preguntar`);
-				log(`Fin del juego!: ${colorize(score,'green')} aciertos.`);
+				console.log(`Fin del juego!: ${colorize(score,'green')} aciertos.`);
 				rl.prompt();
 
 			}else{
@@ -205,14 +205,14 @@ exports.playCmd = rl => {
 				return makeQuestion(rl, `${quiz.question}? `)
 				.then(q=>{
 					if (q.toLowerCase().trim()===quiz.answer.toLowerCase().trim()) {
-							log(`Su respuesta es correcta. correct`);
+							console.log(`Su respuesta es correcta. correct`);
 							//biglog('CORRECTO','green');
 							score++;
 							toBeResolved.splice(rnd,1);
 							playOne();
 						}else{
 							//biglog('INCORRECTO','red');
-							log(`Su respuesta es incorrecta. incorrect`);
+							console.log(`Su respuesta es incorrecta. incorrect`);
 							rl.prompt();
 						}
 				});
