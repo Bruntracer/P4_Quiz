@@ -145,9 +145,11 @@ exports.testCmd =(rl,id) => {
 		return makeQuestion(rl, `${quiz.question}? `)
 		.then(q=>{
 			if (q.toLowerCase().trim()===quiz.answer.toLowerCase().trim()) {
+					rl.prompt();
 					console.log(`Su respuesta es correcta. correct`);
 					//biglog('CORRECTO','green');
 				}else{
+					rl.prompt();
 					//biglog('INCORRECTO','red');
 					console.log(`Su respuesta es incorrecta. incorrect`);
 				}
