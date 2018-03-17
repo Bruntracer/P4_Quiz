@@ -206,12 +206,12 @@ exports.playCmd = rl => {
 				.then(q=>{
 					if (q.toLowerCase().trim()===quiz.answer.toLowerCase().trim()) {
 							log(`Su respuesta es correcta. correct`);
-							biglog('CORRECTO','green');
+							//biglog('CORRECTO','green');
 							score++;
 							toBeResolved.splice(rnd,1);
 							playOne();
 						}else{
-							biglog('INCORRECTO','red');
+							//biglog('INCORRECTO','red');
 							log(`Su respuesta es incorrecta. incorrect`);
 							rl.prompt();
 						}
