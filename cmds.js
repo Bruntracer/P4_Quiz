@@ -141,8 +141,8 @@ exports.testCmd =(rl,id) => {
 			throw new Error(`No existe un quiz asociado al id:${id}.`);
 		}
 
-		log(`${quiz.question}? `);
-		return makeQuestion(rl, 'Introduzca la respuesta: ')
+		
+		return makeQuestion(rl, `${quiz.question}? `)
 		.then(q=>{
 			if (q.toLowerCase().trim()===quiz.answer.toLowerCase().trim()) {
 					log(`Su respuesta es correcta.`);
@@ -201,8 +201,8 @@ exports.playCmd = rl => {
 					throw new Error(`No existe un quiz asociado al id:${id}.`);
 				}
 
-				log(`${quiz.question}? `);
-				return makeQuestion(rl, 'Introduzca la respuesta: ')
+				
+				return makeQuestion(rl, `${quiz.question}? `)
 				.then(q=>{
 					if (q.toLowerCase().trim()===quiz.answer.toLowerCase().trim()) {
 							log(`Su respuesta es correcta. correct`);
