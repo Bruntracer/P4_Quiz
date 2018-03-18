@@ -214,7 +214,7 @@ exports.playCmd = rl => {
 							playOne();
 						}else{
 							//biglog('INCORRECTO','red');
-							console.log(`Su respuesta es incorrecta. incorrect`);
+							console.log(`Su respuesta es incorrecta. Fin del juego`);
 							rl.prompt();
 						}
 				});
