@@ -159,7 +159,7 @@ exports.testCmd =(socket,rl,id) => {
 	.then (() => {
 		rl.prompt();
 	});
-};
+
 
 
 };
@@ -226,7 +226,7 @@ exports.playCmd = (socket,rl) => {
 	.then (() => {
 		rl.prompt();
 	});
-	});
+	
 
 
 
